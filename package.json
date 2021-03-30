@@ -1,11 +1,12 @@
 {
   "dependencies": {
-    "discord.js": "^12.5.1"
+    "cron": "^1.8.2",
+    "discord.js": "^12.5.1",
+    "dotenv": "^8.2.0"
   },
   "name": "cpacbot",
   "version": "1.0.0",
   "main": "main.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,5 +20,8 @@
     "url": "https://github.com/KevinHa48/TriviaBot/issues"
   },
   "homepage": "https://github.com/KevinHa48/TriviaBot#readme",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
 }

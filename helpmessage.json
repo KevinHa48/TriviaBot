@@ -1,0 +1,25 @@
+{
+    "title": "Trigger Trivia Bot Commands!",
+    "description": "You're receving this message because you messaged the bot the help command! Below are the list of commands and rules for participating in the Trigger Trivia Game. Please read carefully and good luck!",
+    "color": 16711680,
+    "footer": {
+      "text": "Good luck!"
+    },
+    "image": {
+      "url": "https://i.imgur.com/c6HvycR.gif"
+    },
+    "fields": [
+      {
+        "name": "Rules",
+        "value": "1. Every hour the bot will send a trivia question relating to any of the anime produced by Studio Trigger. Keep an eye out on the `#Trivia` channel! \n\n2. When the question is announced, DM the bot your answer (case-insensitive). **You will have 3 attempts per each question announced**, so answer carefully!\n\n3. When the current question round is finished, players who answer correctly will get 5 points for each question. All questions are weighted the same! \n\n4. When all rounds are finished, winners will be announced on the `#Trivia` channel and will receive a DM from the bot."
+      },
+      {
+        "name": "How do I join?",
+        "value": "You can join anytime with the `!join` command. Keep in mind you will be at a point disadvantage if you join later, but feel free to hop in anytime!"
+      },
+      {
+        "name": "Prizes for Winners",
+        "value": "To be announced!"
+      }
+    ]
+}
