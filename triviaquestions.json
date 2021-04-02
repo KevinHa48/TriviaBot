@@ -1,0 +1,27 @@
+{
+    "trivia_bank" : [
+        {
+            "question": "Which musical group performs the second ending for Kill la Kill?",
+            "id": 1,
+            "answer": "Sayonara Ponytail",
+            "show": "Kill La Kill",
+            "image": "./images/mako.gif"
+        },
+
+        {
+            "question": "What is the name of the terrorist group Lio Fotia is a part of?",
+            "id": 2,
+            "answer": "Mad Burnish",
+            "show": "Promare",
+            "image": "./images/lio.gif"
+        },
+
+        {
+            "question": "What Trigger show does Luluco and Nova from Space Patrol Luluco make a cameo in?",
+            "id": 3,
+            "answer": "Kiznaiver",
+            "show": "Kiznaiver",
+            "image": "./images/luluco.gif"
+        }
+    ]
+}
