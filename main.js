@@ -20,15 +20,27 @@ client.on("ready", () => {
 
     //Sends question every 5 seconds, put it in ready for now to test.
     //require converts json file to JS object already, just need to parse it for it's question and filename.
-    var q = setInterval(() => {
-      client.channels.cache.get('826315775111200848').send(`Question: ${qbank.trivia_bank[i].question}`, 
-      {files: [`${qbank.trivia_bank[i].image}`]});
-      i++;
-      if(i == qbank.trivia_bank.length) {clearInterval(q)};
-    }, 5000);
+    // var q = setInterval(() => {
+    //   client.channels.cache.get('826315775111200848').send(`Question: ${qbank.trivia_bank[i].question}`, 
+    //   {files: [`${qbank.trivia_bank[i].image}`]});
+    //   i++;
+    //   if(i == qbank.trivia_bank.length) {clearInterval(q)};
+    // }, 5000);
 
 });
 
+
+function sendTrivia() {
+  if(i == qbank.trivia_bank.length) {
+    clearInterval(q);
+  }
+  else {
+    i++;
+    client.channels.cache.get('826315775111200848').send(`Question: ${qbank.trivia_bank[i].question}`, 
+    {files: [`${qbank.trivia_bank[i].image}`]});
+  }
+  
+}
 //We might have to use CRON if we want to have greater control of when the bot sends out the questions.
 
 // let scheduledTrivia = new cron.CronJob('*/2 * * * *', () => {
@@ -48,17 +60,21 @@ client.on("message", message => {
       message.author.send({ embed: helpmsg });
     }
 
-    /*
-    if (command === "start") {
-      message.author.send("Started Cron Job.")
-      scheduledTrivia.start();
-    }
+    /* Admin Commands Only */
+    // Command must be made inside server only.
+    if(message.guild) {
+      var perm_check = message.member.roles.cache.has('827662867171901481');
 
-    if (command === "stop") {
-      message.author.send("Stopped Cron Job.")
-      scheduledTrivia.stop();
+      if (perm_check && (command === "start") ) {
+        controller = setInterval(sendTrivia, 5000);
+      }
+  
+      if (perm_check && (command === "stop") ) {
+        console.log("Warning: Used an admin command!!!");
+      }
     }
-    */
+    
+  
     
 
 });
