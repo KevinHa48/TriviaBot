@@ -1,8 +1,10 @@
 {
   "dependencies": {
     "cron": "^1.8.2",
+    "discord": "^0.8.2",
     "discord.js": "^12.5.1",
-    "dotenv": "^8.2.0"
+    "dotenv": "^8.2.0",
+    "mongoose": "^5.12.3"
   },
   "name": "cpacbot",
   "version": "1.0.0",
