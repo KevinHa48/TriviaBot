@@ -24,13 +24,8 @@ var answered = false;
 client.on("ready", async () => {
     console.log("Trivia Bot is now online!"); 
 
-    await mongo().then(mongoose => {
-      try {
-        console.log('Successfully connected to mongo!');
-      } finally {
-        mongoose.connection.close();
-      }
-    })
+    let db = await mongo();
+    if (db) console.log("Successfully connected to mongo!");
     
 });
 

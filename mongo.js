@@ -7,5 +7,10 @@ module.exports = async () => {
         useNewUrlParser: true,
         useUnifiedTopology: true
     });
-    return mongoose;
+    const db = mongoose.connection;
+    db.on('error', console.error.bind(console, 'connection error:'));
+    db.once('open', function() {
+        // we're in
+    });
+    return db;
 }
