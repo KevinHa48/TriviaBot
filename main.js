@@ -8,6 +8,7 @@ const Discord = require("discord.js");
 const helpmsg = require("./helpmessage.json")
 const qbank = require("./triviaquestions.json")
 const mongo = require('./mongo')
+const Users = require("./userDB/joinschema.js");
 //const cron = require('cron');
 
 require('dotenv').config();
@@ -83,6 +84,23 @@ client.on("message", message => {
     if (command === "help") {
       setTimeout(() => message.delete(), 3000);
       message.author.send({ embed: helpmsg });
+    }
+
+    if (command === "join") {
+      setTimeout(() => {
+        const user = new Users({
+          username: message.author.tag,
+          discordID: message.author.id,
+          attempts: 3,
+          joinDate: message.createdAt
+        });
+        user.save()
+        .then(result => console.log(result))
+        .catch(err => console.log(err));
+  
+        console.log("Successfully added user to DB");
+      }, 10000);
+     
     }
 
     /* Admin Commands Only */
