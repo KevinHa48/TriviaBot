@@ -5,10 +5,10 @@
 ******************************************************/
 
 const Discord = require("discord.js");
-const helpmsg = require("./helpmessage.json")
-const qbank = require("./triviaquestions.json")
+const helpmsg = require("./data/help_message.json")
+const qbank = require("./data/trivia_questions.json")
 const mongo = require('./mongo')
-const Users = require("./userDB/joinschema.js");
+const Users = require("./userDB/join_schema.js");
 //const cron = require('cron');
 
 require('dotenv').config();
@@ -94,7 +94,7 @@ client.on("message", message => {
         .catch(err => console.log(err));
   
         console.log("Successfully added user to DB");
-      }, 10000);
+      }, 1000);
      
     }
 
