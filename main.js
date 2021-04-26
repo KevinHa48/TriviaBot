@@ -4,6 +4,14 @@
  * 2. Run using nodemon, npm install -g nodemon first.
 ******************************************************/
 
+
+/******************************************************
+ * TODO:
+ * 1. Clean up this gross code
+ * 2. Figure out how to implement multi-rounds.
+ * 3. Error checking.
+******************************************************/
+
 const Discord = require("discord.js");
 const helpmsg = require("./data/help_message.json")
 const qbank = require("./data/trivia_questions.json")
@@ -17,9 +25,8 @@ const client = new Discord.Client();
 const prefix = "!";
 var i = 0;
 var controller;
-var join_status = true;
 var current_answer;
-var answered = false;
+var participant;
 
 client.on("ready", async () => {
     console.log("Trivia Bot is now online!"); 
@@ -48,36 +55,49 @@ function sendTrivia() {
 //   client.channels.cache.get('826315775111200848').send(`This test message will be sent every 2 minutes using node-cron.`)
 // });
 
+client.on("message", async message => {
+    if (message.author.bot || !message.content.startsWith(prefix)) return;
+    const commandBody = message.content.slice(prefix.length);
+    const input = commandBody.trim().split(/ +/);
+    const command = input.shift().toLowerCase();
+    const args = input.join('').toLowerCase();
 
-client.on("message", message => {
-    if (message.author.bot) return;
+    if (command === "answer" && message.channel.type === 'dm') {
+      //Helpful tip: find returns array, findOne returns single json object!!
+      participant = await Users.findOne({discordID: message.author.id});
+      console.log(args);
+      console.log("User attempted to answer question.");
 
-    if (!message.content.startsWith(prefix)) {
-      if(message.channel.type === 'dm' && join_status && !answered) {
-        console.log("User attempted to answer question.")
-        if(message.content == current_answer) {
-          message.author.send(`Correct!`);
-          answered = true;
-        } else {
-          message.author.send(`Incorrect, try again.`);
-        }
+      if (!participant.joinStatus) {
+        message.author.send(`It looks you haven't joined yet. Type !join to enter.`);
       }
-      else if (answered) {
-        message.author.send(`You already answered correctly, sit tight for the next question!`)
-        return;
+
+      else if (participant.attempts == 0) {
+        message.author.send(`You reached the maximum attempts allowed.`);
       }
+
+      else if (participant.answered) {
+        message.author.send(`You already answered correctly, sit tight for the next question!`);
+      }
+
+      else if (args == current_answer) {
+        message.author.send(`Correct!`);
+        participant.score++;
+        participant.answered = true;
+      }
+       
       else {
-        message.author.send(`It looks like you haven't joined using the !join command.`);
-        return;
+        message.author.send(`Incorrect, try again.`);
+        participant.attempts--;
+        console.log(participant.attempts);
       }
+
+      participant.save();
     }
 
-    const commandBody = message.content.slice(prefix.length);
-    const args = commandBody.split(' ');
-    const command = args.shift().toLowerCase();
-
     if (command === "help") {
-      setTimeout(() => message.delete(), 3000);
+      //setTimeout(() => message.delete(), 3000);
+      console.log(args);
       message.author.send({ embed: helpmsg });
     }
 
@@ -87,14 +107,19 @@ client.on("message", message => {
           username: message.author.tag,
           discordID: message.author.id,
           attempts: 3,
+          score: 0,
+          joinStatus: true,
+          answered: false,
           joinDate: message.createdAt
         });
         user.save()
-        .then(result => console.log(result))
-        .catch(err => console.log(err));
-  
-        console.log("Successfully added user to DB");
-      }, 1000);
+          .then(result => {
+            console.log(result)
+            message.author.send(`Successfully joined! Good luck!`)})
+          .catch(err => {
+            console.log(err);
+            message.author.send(`You already joined.`)});
+      }, 500);
      
     }
 
@@ -117,9 +142,6 @@ client.on("message", message => {
         console.log("Stopped trivia controller.");
       }
     }
-    
-  
-    
 
 });
 
