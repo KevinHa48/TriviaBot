@@ -22,17 +22,20 @@ module.exports = {
               message.author.send(`You already answered correctly, sit tight for the next question!`);
             }
       
-            else if (args == current_answer) {
-              message.author.send(`Correct!`);
+            else if (args == global.current_answer) {
+              message.author.send(`Correct! Keep an eye on the next question!`);
               participant.score++;
               participant.answered = true;
             }
       
             else {
+              console.log(global.current_answer);
               message.author.send(`Incorrect, try again.`);
               participant.attempts--;
-              console.log(participant.attempts);
+              //console.log(participant.attempts);
             }
+
+            await participant.save();
         }
     }
 }

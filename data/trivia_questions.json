@@ -11,7 +11,7 @@
         {
             "question": "What is the name of the terrorist group Lio Fotia is a part of?",
             "id": 2,
-            "answer": "Mad Burnish",
+            "answer": "madburnish",
             "show": "Promare",
             "image": "./images/lio.gif"
         },
@@ -19,7 +19,7 @@
         {
             "question": "What Trigger show does Luluco and Nova from Space Patrol Luluco make a cameo in?",
             "id": 3,
-            "answer": "Kiznaiver",
+            "answer": "kiznaiver",
             "show": "Kiznaiver",
             "image": "./images/luluco.gif"
         }

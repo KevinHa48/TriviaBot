@@ -21,6 +21,7 @@ client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 const prefix = "!";
 
+
 client.on("ready", async () => {
     console.log("Trivia Bot is now online!"); 
 
