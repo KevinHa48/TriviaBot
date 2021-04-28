@@ -1,5 +1,6 @@
 const qbank = require("../data/trivia_questions.json");
 const { resetUsers } = require("./reset.js");
+const { generateEmbed } = require("../extra_functions/embed.js");
 const { client } = require('../main.js');
 
 let i = 0;
@@ -15,8 +16,11 @@ async function sendTrivia() {
       return;
     }
     else {
-      client.channels.cache.get('826315775111200848').send(`Question: ${qbank.trivia_bank[i].question}`, 
-      {files: [`${qbank.trivia_bank[i].image}`]});
+      client.channels.cache.get('826315775111200848')
+        .send(generateEmbed(qbank.trivia_bank[i].imagePath, 
+                            qbank.trivia_bank[i].image, 
+                            qbank.trivia_bank[i].id, 
+                            qbank.trivia_bank[i].question));
       await resetUsers();
       current_answer = ((qbank.trivia_bank[i].answer).split(' ').join('')).toLowerCase(); 
       console.log(current_answer);

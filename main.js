@@ -12,7 +12,7 @@
 
 const Discord = require("discord.js");
 const fs = require('fs');
-const mongo = require('./mongo')
+const mongo = require('./userDB/mongo')
 
 require('dotenv').config();
 

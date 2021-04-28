@@ -5,7 +5,8 @@
             "id": 1,
             "answer": "Sayonara Ponytail",
             "show": "Kill La Kill",
-            "image": "./images/mako.gif"
+            "imagePath": "./images/mako.gif",
+            "image": "mako.gif"
         },
 
         {
@@ -13,7 +14,8 @@
             "id": 2,
             "answer": "Mad Burnish",
             "show": "Promare",
-            "image": "./images/lio.gif"
+            "imagePath": "./images/lio.gif",
+            "image": "lio.gif"
         },
 
         {
@@ -21,7 +23,8 @@
             "id": 3,
             "answer": "Kiznaiver",
             "show": "Kiznaiver",
-            "image": "./images/luluco.gif"
+            "imagePath": "./images/luluco.gif",
+            "image": "luluco.gif"
         }
     ]
 }

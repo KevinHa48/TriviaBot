@@ -4,7 +4,8 @@
     "discord": "^0.8.2",
     "discord.js": "^12.5.1",
     "dotenv": "^8.2.0",
-    "mongoose": "^5.12.3"
+    "mongoose": "^5.12.3",
+    "string-similarity": "^4.0.4"
   },
   "name": "cpacbot",
   "version": "1.0.0",
