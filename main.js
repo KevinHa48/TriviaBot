@@ -50,13 +50,16 @@ client.on("message", async message => {
     const command = input.shift().toLowerCase();
     const args = input.join('').toLowerCase();
 
+    // Regex, purge all non-alphanumeric.
+    const clean_args = args.replace(/[^A-Za-z0-9]/g, "");
+
     if(!client.commands.has(command)) {
       message.author.send(`Couldn't understand your command, make sure you didn't misspell anything!`)
       return;
     }
 
     try {
-      client.commands.get(command).execute(message, args);
+      client.commands.get(command).execute(message, clean_args);
     } catch (error) {
       console.error(error);
     }
