@@ -2,6 +2,7 @@ const qbank = require("../data/trivia_questions.json");
 const { resetUsers } = require("./reset.js");
 const { generateEmbed } = require("../extra_functions/embed.js");
 const { client } = require('../main.js');
+const s_data = require('../data/server_data.json');
 
 let i = 0;
 let current_answer;
@@ -12,11 +13,17 @@ async function sendTrivia() {
     if(i == qbank.trivia_bank.length) {
       triviaEnded = true;
       console.log("Trivia has ended.");
+
+      client.channels.cache.get(s_data.question_channel)
+      .send(`<@&${s_data.role_id}> Quick on the Trigger has ended for today. Winners will be DM'd. Thanks for playing!`);
+      
       clearInterval(controller);
       return;
     }
     else {
-      client.channels.cache.get('826315775111200848')
+      client.channels.cache.get(s_data.question_channel).send(`<@&${s_data.role_id}>`);
+
+      client.channels.cache.get(s_data.question_channel)
         .send(generateEmbed(qbank.trivia_bank[i].imagePath, 
                             qbank.trivia_bank[i].image, 
                             qbank.trivia_bank[i].id, 
@@ -43,11 +50,13 @@ module.exports = {
     getTriviaStatus,
     execute(message, args) {
         if(message.guild) {
-            let perm_check = message.member.roles.cache.has('827662867171901481');
+            let perm_check = message.member.roles.cache.has(s_data.admin_id);
       
             if (perm_check && (args === "start") ) {
               message.delete();
               console.log("Warning: Used an admin command!!!");
+              message.author.send('Warning: Started the trivia controller.')
+              sendTrivia();
               controller = setInterval(sendTrivia, 15000);
               console.log("Started trivia controller.");
             }
@@ -55,9 +64,9 @@ module.exports = {
             if (perm_check && (args === "stop") ) {
               message.delete();
               console.log("Warning: Used an admin command!!!");
+              message.author.send('Warning: Stopped the trivia controller.')
               clearInterval(controller);
               console.log("Stopped trivia controller.");
-              return;
             }
         }
     }

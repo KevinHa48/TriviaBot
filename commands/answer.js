@@ -49,8 +49,13 @@ module.exports = {
       }
 
       else {
-        message.author.send(`Incorrect, try again.`);
         participant.attempts--;
+        if(participant.attempts == 0) {
+          message.author.send(`Incorrect. You have used all of your attempts, better luck on the next question!`);
+        }
+        else {
+          message.author.send(`Incorrect, try again.`);
+        }
       }
 
       await participant.save();

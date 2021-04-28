@@ -4,6 +4,6 @@ module.exports = {
     name: 'help',
     description: 'Simple help command.',
     execute(message, args) {
-        message.author.send({ embed: helpmsg });
+        message.author.send({ embed: helpmsg });      
     }
 }

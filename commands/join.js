@@ -1,4 +1,13 @@
 const Users = require("../userDB/join_schema.js");
+const { client } = require('../main.js');
+const s_data = require('../data/server_data.json');
+
+async function addRole(user_id) {
+    const member = await client.guilds.cache.get(s_data.guild_id)
+    .members.fetch(user_id);
+
+    member.roles.add(s_data.role_id);
+}
 
 module.exports = {
     // Take note, node will not warn you of misspellings here, please be careful.
@@ -34,14 +43,17 @@ module.exports = {
                 });
                 user.save()
                     .then(result => {
-                        console.log(result)
-                        message.author.send(`Successfully joined! Good luck!`)
+                        console.log(result);
+                        message.author.send(`Successfully joined! Good luck!`);
                     })
                     .catch(err => {
                         console.log(err);
-                        message.author.send(`Error joining, try again in a bit.`)
+                        message.author.send(`Could not save user entry.`);
+                        return;
                     });
             }
         })
+
+        await addRole(message.author.id);
     }
 }

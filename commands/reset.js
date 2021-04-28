@@ -19,15 +19,16 @@ const resetUsers = async (fullReset = false) => {
             entry.save();
         })
     })
-    console.log("Successfully reset all users for the next question");
+    if(!fullReset) { console.log("Successfully reset all users for the next question"); }
 }
+const s_data = require('../data/server_data.json');
 
 module.exports = {
     name: 'reset',
     description: 'Admin / Controller Only: Resets the user entries.',
     resetUsers,
     async execute(message, args) {
-        if(message.member.roles.cache.has('827662867171901481')) {
+        if(!(message.channel.type === 'dm') && message.member.roles.cache.has(s_data.admin_id)) {
             console.log("Warning: Hard reset requested...");
             await resetUsers(true);
             message.author.send('Successfully hard resetted the database.')
