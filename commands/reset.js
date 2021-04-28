@@ -4,6 +4,7 @@
  */
 
 const Users = require("../userDB/join_schema.js");
+const cmdusg = require("../data/command_usage.json");
 
 const resetUsers = async (fullReset = false) => {
     await Users.find({}, (err, usr) => {
@@ -26,8 +27,16 @@ module.exports = {
     description: 'Admin / Controller Only: Resets the user entries.',
     resetUsers,
     async execute(message, args) {
-        console.log("Warning: Hard reset requested...");
-        await resetUsers(true);
-        message.author.send('Successfully hard resetted the database.')
+        if(message.member.roles.cache.has('827662867171901481')) {
+            console.log("Warning: Hard reset requested...");
+            await resetUsers(true);
+            message.author.send('Successfully hard resetted the database.')
+        }
+        else {
+            // haha funny way to disguise an admin command xdddd
+            message.author.send("Sorry! Couldn't recognize that command. Check the commands below for help.");
+            message.author.send({ embed: cmdusg });
+        }
+       
     }
 }

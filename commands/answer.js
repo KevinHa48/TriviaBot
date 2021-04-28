@@ -1,4 +1,10 @@
+/**
+ * Merge join and answer command.
+ * Utilize join.js.
+ */
+
 const Users = require("../userDB/join_schema.js");
+const Controller = require("./controller.js");
 
 module.exports = {
     name: 'answer',
@@ -12,17 +18,20 @@ module.exports = {
       
             if (!participant.joinStatus) {
               message.author.send(`It looks you haven't joined yet. Type !join to enter.`);
+              return;
             }
       
             else if (participant.attempts == 0) {
               message.author.send(`You reached the maximum attempts allowed.`);
+              return;
             }
       
             else if (participant.answered) {
               message.author.send(`You already answered correctly, sit tight for the next question!`);
+              return;
             }
       
-            else if (args == global.current_answer) {
+            else if (args == Controller.getAnswer()) {
               message.author.send(`Correct! Keep an eye on the next question!`);
               participant.score++;
               participant.answered = true;

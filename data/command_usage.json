@@ -1,0 +1,27 @@
+{
+    
+    "description": "If you're having any trouble with the bot, feel free to contact any of the staff through a DM or @ us on the server!",
+    "url": "https://discordapp.com",
+    "color": 16155264,
+    "image": {
+        "url": "https://cdn.discordapp.com/embed/avatars/0.png"
+    },
+    "author": {
+        "name": "Quick on Trigger Bot's Commands",
+        "icon_url": "https://cdn.discordapp.com/embed/avatars/0.png"
+    },
+    "fields": [
+        {
+            "name": "Answer Command",
+            "value": "If you think you've got the answer to the question use this command! To answer, type the command and followed by a space, your answer. Don't worry about spaces, symbols or uppercase letters!```!answer youranswergoeshere```"
+        },
+        {
+            "name": "Score Command",
+            "value": "Use this command to check your current score! ```!score```"
+        },
+        {
+            "name": "Attempts Left Command",
+            "value": "Use this command to check how many tries you got left on the current question. Remember you only get 3 tries per question so make it count! ```!attempts```"
+        }
+    ]
+}

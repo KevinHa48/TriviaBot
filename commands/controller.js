@@ -2,12 +2,14 @@ const qbank = require("../data/trivia_questions.json");
 const { resetUsers } = require("./reset.js");
 const { client } = require('../main.js');
 
-var i = 0;
-global.current_answer;
+let i = 0;
+let current_answer;
+let controller;
 
 async function sendTrivia() {
     if(i == qbank.trivia_bank.length) {
-      console.log("Trivia has ended.")
+      console.log("Trivia has ended.");
+      clearInterval(controller);
       return;
     }
     else {
@@ -19,18 +21,22 @@ async function sendTrivia() {
     }    
 }
 
+function getAnswer() {
+    return current_answer;
+}
+
 module.exports = {
     name: 'controller',
     description: 'Admin only: Controller for Questions.',
+    getAnswer,
     execute(message, args) {
         if(message.guild) {
             let perm_check = message.member.roles.cache.has('827662867171901481');
-            let controller;
       
             if (perm_check && (args === "start") ) {
               message.delete();
               console.log("Warning: Used an admin command!!!");
-              controller = setInterval(sendTrivia, 30000);
+              controller = setInterval(sendTrivia, 15000);
               console.log("Started trivia controller.");
             }
         
@@ -39,6 +45,7 @@ module.exports = {
               console.log("Warning: Used an admin command!!!");
               clearInterval(controller);
               console.log("Stopped trivia controller.");
+              return;
             }
         }
     }
