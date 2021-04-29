@@ -6,6 +6,7 @@
 
 const Users = require("../userDB/join_schema.js");
 const Controller = require("./controller.js");
+const leave = require("./leave.js")
 
 module.exports = {
   name: 'answer',
@@ -17,8 +18,13 @@ module.exports = {
       console.log(args);
       console.log("User attempted to answer question.");
 
-      if (!participant.joinStatus) {
-        message.author.send(`It looks you haven't joined yet. Type !join to enter.`);
+      if (!participant.joinStatus && !leave.getLeaveStatus()) {
+        message.author.send('It looks you haven\'t joined yet. Type `!join` to enter.');
+        return;
+      }
+
+      else if(leave.getLeaveStatus()) {
+        message.author.send('You have left the game. Type `!join` to re-enter.');
         return;
       }
 
@@ -66,7 +72,7 @@ module.exports = {
           if (Controller.getIndex() === Controller.getLength()) {
             message.author.send('Incorrect. That was the last question of the event, thanks for playing! The winners will be announced shortly after the end of the hour!');
           } else if (Controller.getIndex() === 10) {
-            message.author.send('Incorret. That was the last question of the day. The event will resume tomorrow morning.');
+            message.author.send('Incorrect. That was the last question of the day. The event will resume tomorrow morning.');
           } else {
             message.author.send(`Incorrect. You have used all of your attempts, better luck on the next question!`);
           }

@@ -1,6 +1,6 @@
 {
     "title": "Quick on the Trigger Trivia Bot!",
-    "description": "You're receiving this message because used the `!help` command! Below are the list of commands, rules, and details for the Trigger Trivia Game. Please read everything over carefully and good luck!",
+    "description": "You're receiving this message because you used the `!help` command! Below are the list of commands, rules, and details for the Trigger Trivia Game. Please read everything over carefully and good luck!",
     "color": 16711680,
     "footer": {
       "text": "Good luck!"
@@ -23,7 +23,7 @@
       },
       {
         "name": "How do I quit?",
-        "value": "If you no longer wish to be pinged and want to stop playing, DM the bot `!quit`. This will remove the `QoT` role, but your details will be saved if you wish to join back. If you wish to join back, you will need to DM `!join` again."
+        "value": "If you no longer wish to be pinged and want to stop playing, DM the bot `!leave`. This will remove the `QoT` role, but your details will be saved if you wish to join back. If you wish to join back, you will need to DM `!join` again."
       },
       {
         "name": "Prizes for Winners",

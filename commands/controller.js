@@ -3,6 +3,7 @@ const { resetUsers } = require("./reset.js");
 const { generateEmbed } = require("../extra_functions/embed.js");
 const { client } = require('../main.js');
 const s_data = require('../data/server_data.json');
+const cmdusg = require("../data/command_usage.json");
 
 let i = 0;
 let current_answer;
@@ -78,6 +79,10 @@ module.exports = {
               clearInterval(controller);
               console.log("Stopped trivia controller.");
             }
+        }
+        else {
+          message.author.send("Couldn't understand your command, make sure you didn't misspell anything!");
+          message.author.send({ embed: cmdusg });
         }
     }
 
