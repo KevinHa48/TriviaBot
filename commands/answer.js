@@ -18,7 +18,7 @@ module.exports = {
       console.log(args);
       console.log("User attempted to answer question.");
 
-      if (!participant.joinStatus && !leave.getLeaveStatus()) {
+      if (!participant && !leave.getLeaveStatus()) {
         message.author.send('It looks you haven\'t joined yet. Type `!join` to enter.');
         return;
       }
