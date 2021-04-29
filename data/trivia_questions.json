@@ -25,6 +25,24 @@
             "show": "Kiznaiver",
             "imagePath": "./images/luluco.gif",
             "image": "luluco.gif"
+        },
+
+        {
+            "question": "What is the name of the ED (ending song) for Space Patrol Lulco?",
+            "id": 4,
+            "answer": "Pipo Password",
+            "show": "Space Patrol Luluco",
+            "imagePath": "./images/luluco2.gif",
+            "image": "luluco2.gif"
+        },
+
+        {
+            "question": "What does the SSSS stand for in SSSS.Gridman? (include the 'to' and 'a')",
+            "id": 5,
+            "answer": "Special Signature to Save a Soul",
+            "show": "SSSS.Gridman",
+            "imagePath": "./images/rikka.gif",
+            "image": "rikka.gif"
         }
     ]
 }

@@ -57,7 +57,7 @@ module.exports = {
               console.log("Warning: Used an admin command!!!");
               message.author.send('Warning: Started the trivia controller.')
               sendTrivia();
-              controller = setInterval(sendTrivia, 15000);
+              controller = setInterval(sendTrivia, 300000);
               console.log("Started trivia controller.");
             }
         

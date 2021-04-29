@@ -28,6 +28,7 @@ module.exports = {
     description: 'Admin / Controller Only: Resets the user entries.',
     resetUsers,
     async execute(message, args) {
+        console.log("Warning: Hard reset requested...");
         if(!(message.channel.type === 'dm') && message.member.roles.cache.has(s_data.admin_id)) {
             console.log("Warning: Hard reset requested...");
             await resetUsers(true);
