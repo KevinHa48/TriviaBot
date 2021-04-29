@@ -1,6 +1,6 @@
 {
     "title": "Quick on the Trigger Trivia Bot!",
-    "description": "You're receving this message because you messaged the bot the help command! Below are the list of commands and rules for participating in the Trigger Trivia Game. Please read carefully and good luck!",
+    "description": "You're receiving this message because used the `!help` command! Below are the list of commands, rules, and details for the Trigger Trivia Game. Please read everything over carefully and good luck!",
     "color": 16711680,
     "footer": {
       "text": "Good luck!"
@@ -15,11 +15,15 @@
       },
       {
         "name": "Rules",
-        "value": "1. Every hour the bot will send a trivia question relating to any of the anime produced by Studio Trigger. Keep an eye out on the `#Trivia` channel! \n\n2. When the question is announced, DM the bot your answer (case-insensitive). **You will have 3 attempts for each question announced**, so answer carefully!\n\n3. When the current question round is finished, players who answer correctly will earn 1 point per question. \n\n4. When all rounds are finished, winners will be announced on the `#insert_channel_name` channel and will receive a DM from the bot."
+        "value": "1. Every hour, the bot will send a trivia question relating to any of the anime produced by Studio Trigger. Keep an eye out on the `#Quick-on-the-Trigger` channel! \n\n2. When the question is announced, DM the bot your answer (case-insensitive) using the `!answer` command. An example would be `!answer my answer here`. **You will have 3 attempts for each question, and each attempt will be counted towards the current question**, so answer carefully! This means that you cannot answer a question that was asked previously.\n\n3. When each question is finished, players who answered correctly will earn 1 point. \n\n4. When all rounds are finished, the contestants with the highest score will be entered into a raffle to win a prize. Winners will be announced on the `#Quick-on-the-Trigger` channel and will receive a DM from the bot."
       },
       {
         "name": "How do I join?",
-        "value": "You can join anytime with the `!answer` command. When you feel like you have the answer, type `!answer youranswerhere` and you'll automatically start playing!"
+        "value": "You can join anytime with the `!join` command. When you join, you will be assigned the `QoT` role and be pinged whenever the a question is announced. When you feel like you have the answer, type `!answer your answer here` and you'll automatically start playing!"
+      },
+      {
+        "name": "How do I quit?",
+        "value": "If you no longer wish to be pinged and want to stop playing, DM the bot `!quit`. This will remove the `QoT` role, but your details will be saved if you wish to join back. If you wish to join back, you will need to DM `!join` again."
       },
       {
         "name": "Prizes for Winners",

@@ -43,11 +43,21 @@ function getTriviaStatus() {
     return triviaEnded;
 }
 
+function getIndex() {
+  return i;
+}
+
+function getLength() {
+  return qbank.trivia_bank.length;
+}
+
 module.exports = {
     name: 'controller',
     description: 'Admin only: Controller for Questions.',
     getAnswer,
     getTriviaStatus,
+    getIndex,
+    getLength,
     execute(message, args) {
         if(message.guild) {
             let perm_check = message.member.roles.cache.has(s_data.admin_id);

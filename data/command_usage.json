@@ -6,21 +6,25 @@
         "url": "https://i.imgur.com/VqJlBxY.gif"
     },
     "author": {
-        "name": "Quick on Trigger Bot's Commands",
+        "name": "Quick on the Trigger Bot Commands",
         "icon_url": "https://cdn.discordapp.com/embed/avatars/0.png"
     },
     "fields": [
         {
             "name": "Answer Command",
-            "value": "If you think you've got the answer to the question use this command! To answer, type the command and followed by a space, your answer. Don't worry about spaces, symbols or uppercase letters!```!answer youranswergoeshere```"
+            "value": "If you think you've got the answer to the question use this command! To answer, type `!answer ` followed by your answer. Don't worry about spaces, symbols, or uppercase letters!```!answer your answer goes here```"
         },
         {
             "name": "Score Command",
-            "value": "Use this command to check your current score! ```!score```"
+            "value": "Use this command to check your current score!```!score```"
         },
         {
             "name": "Attempts Left Command",
-            "value": "Use this command to check how many tries you got left on the current question. Remember you only get 3 tries per question so make it count! ```!attempts```"
+            "value": "Use this command to check how many tries you have left for the current question. Remember, you only get 3 tries per question so make it count!```!attempts```"
+        },
+        {
+            "name": "Help Command",
+            "value": "Use this command to display the rules, details, and commands for the event!```!help```"
         }
     ]
 }

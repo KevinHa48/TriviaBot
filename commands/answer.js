@@ -38,12 +38,24 @@ module.exports = {
       }
 
       else if (participant.answered) {
-        message.author.send(`You already answered correctly, sit tight for the next question!`);
+        if (Controller.getIndex() === Controller.getLength()) {
+          message.author.send('That was the last question of the event, thanks for playing! The winners will be announced shortly after the end of the hour!');
+        } else if (Controller.getIndex() === 10) {
+          message.author.send('That was the last question of the day. The event will resume tomorrow morning.');
+        } else {
+          message.author.send(`You already answered correctly, sit tight for the next question!`);
+        }
         return;
       }
 
       else if (args == Controller.getAnswer()) {
-        message.author.send(`Correct! Keep an eye on the next question!`);
+        if (Controller.getIndex() === Controller.getLength()) {
+          message.author.send('Correct! That was the last question of the event, thanks for playing! The winners will be announced shortly after the end of the hour!');
+        } else if (Controller.getIndex() === 10) {
+          message.author.send('Correct! That was the last question of the day. The event will resume tomorrow morning.');
+        } else {
+          message.author.send(`Correct! Keep an eye on the next question!`);
+        }
         participant.score++;
         participant.answered = true;
       }
@@ -51,7 +63,13 @@ module.exports = {
       else {
         participant.attempts--;
         if(participant.attempts == 0) {
-          message.author.send(`Incorrect. You have used all of your attempts, better luck on the next question!`);
+          if (Controller.getIndex() === Controller.getLength()) {
+            message.author.send('Incorrect. That was the last question of the event, thanks for playing! The winners will be announced shortly after the end of the hour!');
+          } else if (Controller.getIndex() === 10) {
+            message.author.send('Incorret. That was the last question of the day. The event will resume tomorrow morning.');
+          } else {
+            message.author.send(`Incorrect. You have used all of your attempts, better luck on the next question!`);
+          }
         }
         else {
           message.author.send(`Incorrect, try again.`);
