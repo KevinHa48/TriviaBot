@@ -78,7 +78,7 @@ module.exports = {
           }
         }
         else {
-          message.author.send(`Incorrect, try again.`);
+          message.author.send('Incorrect, try again.\nYou have `' + participant.attempts + '` attempts left!');
         }
       }
 
