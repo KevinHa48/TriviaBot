@@ -3,7 +3,7 @@
         {
             "question": "Which musical group performs the second ending for Kill la Kill?",
             "id": 1,
-            "answer": "Sayonara Ponytail",
+            "answer": ["Sayonara Ponytail"],
             "show": "Kill La Kill",
             "imagePath": "./images/mako.gif",
             "image": "mako.gif"
@@ -12,7 +12,7 @@
         {
             "question": "What is the name of the terrorist group Lio Fotia is a part of?",
             "id": 2,
-            "answer": "Mad Burnish",
+            "answer": ["Mad Burnish"],
             "show": "Promare",
             "imagePath": "./images/lio.gif",
             "image": "lio.gif"
@@ -21,7 +21,7 @@
         {
             "question": "What Trigger show does Luluco and Nova from Space Patrol Luluco make a cameo in?",
             "id": 3,
-            "answer": "Kiznaiver",
+            "answer": ["Kiznaiver"],
             "show": "Kiznaiver",
             "imagePath": "./images/luluco.gif",
             "image": "luluco.gif"
@@ -30,7 +30,7 @@
         {
             "question": "What is the name of the ED (ending song) for Space Patrol Lulco?",
             "id": 4,
-            "answer": "Pipo Password",
+            "answer": ["Pipo Password"],
             "show": "Space Patrol Luluco",
             "imagePath": "./images/luluco2.gif",
             "image": "luluco2.gif"
@@ -39,7 +39,7 @@
         {
             "question": "What does the SSSS stand for in SSSS.Gridman? (include the 'to' and 'a')",
             "id": 5,
-            "answer": "Special Signature to Save a Soul",
+            "answer": ["Special Signature to Save a Soul", "e"],
             "show": "SSSS.Gridman",
             "imagePath": "./images/rikka.gif",
             "image": "rikka.gif"

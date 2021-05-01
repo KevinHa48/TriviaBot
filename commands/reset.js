@@ -5,6 +5,7 @@
 
 const Users = require("../userDB/join_schema.js");
 const cmdusg = require("../data/command_usage.json");
+const s_data = require('../data/server_data.json');
 
 const resetUsers = async (fullReset = false) => {
     await Users.find({}, (err, usr) => {
@@ -21,7 +22,6 @@ const resetUsers = async (fullReset = false) => {
     })
     if(!fullReset) { console.log("Successfully reset all users for the next question"); }
 }
-const s_data = require('../data/server_data.json');
 
 module.exports = {
     name: 'reset',

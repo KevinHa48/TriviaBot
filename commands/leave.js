@@ -5,9 +5,8 @@ const Users = require("../userDB/join_schema.js");
 async function removeRole(message, user_id) {
     const member = await client.guilds.cache.get(s_data.guild_id)
     .members.fetch(user_id);
-   
+    const usr = await Users.findOne({discordID: message.author.id});
     if( member.roles.cache.has(s_data.role_id) ) {
-        const usr = await Users.findOne({discordID: message.author.id});
         usr.joinStatus = false;
         message.author.send('You have left the game! You will not be pinged by the bot anymore.\n'
         + 'Your scores are still saved, so feel free to join back anytime with the `!join` command.\n' + 
@@ -15,6 +14,11 @@ async function removeRole(message, user_id) {
         await member.roles.remove(s_data.role_id);
         await usr.save();
         return;
+    }
+    if(usr) {
+        console.log('e');
+        usr.joinStatus = false;
+        await usr.save();
     }
     message.author.send('You are not currently in the game! Type `!join` to enter'); 
 }

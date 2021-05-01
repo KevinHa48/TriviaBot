@@ -9,6 +9,7 @@ let i = 0;
 let current_answer;
 let controller;
 let triviaEnded = false;
+let ans_arr = [];
 
 async function sendTrivia() {
     if(i == qbank.trivia_bank.length) {
@@ -36,14 +37,17 @@ async function sendTrivia() {
                             qbank.trivia_bank[i].id, 
                             qbank.trivia_bank[i].question));
       await resetUsers();
-      current_answer = (((qbank.trivia_bank[i].answer).split(' ').join('')).toLowerCase()).replace(/[^A-Za-z0-9]/g, "");
-      console.log(current_answer);
+      ans_arr.length = 0;
+      qbank.trivia_bank[i].answer.forEach(ans => {
+        ans_arr.push(ans.split(' ').join('').toLowerCase().replace(/[^A-Za-z0-9]/g, ""));
+      });
+      console.log(ans_arr);
       i++;
     }    
 }
 
 function getAnswer() {
-    return current_answer;
+    return ans_arr;
 }
 
 function getTriviaStatus() {
@@ -74,7 +78,7 @@ module.exports = {
               console.log("Warning: Used an admin command!!!");
               message.author.send('Warning: Started the trivia controller.')
               sendTrivia();
-              controller = setInterval(sendTrivia, 60000);
+              controller = setInterval(sendTrivia, 5000);
               console.log("Started trivia controller.");
             }
         

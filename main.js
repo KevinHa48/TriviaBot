@@ -14,6 +14,8 @@ const Discord = require("discord.js");
 const fs = require('fs');
 const mongo = require('./userDB/mongo')
 const cmdusg = require("./data/command_usage.json");
+const s_data = require('./data/server_data.json');
+const Users = require("./userDB/join_schema.js");
 
 require('dotenv').config();
 
@@ -48,16 +50,16 @@ client.on("message", async message => {
     // Regex, purge all non-alphanumeric.
     const clean_args = args.replace(/[^A-Za-z0-9]/g, "");
 
-    if(!client.commands.has(command)) {
-      message.author.send(`Couldn't understand your command, make sure you didn't misspell anything!`)
-      message.author.send({ embed: cmdusg });
-      return;
-    }
-
     try {
       await client.guilds.cache.get(s_data.guild_id).members.fetch(message.author.id);
     } catch {
       message.author.send(`You are not in the CPAC Discord Server. Make sure you're in the server if you want to play!`);
+      return;
+    }
+
+    if(!client.commands.has(command)) {
+      message.author.send(`Couldn't understand your command, make sure you didn't misspell anything!`)
+      message.author.send({ embed: cmdusg });
       return;
     }
 

@@ -10,24 +10,28 @@
     },
     "fields": [
       {
+        "name": "**Please only use English letters and numbers (1,2,3...) in your answers!**",
+        "value": "-----------------------------------------------------------------------"
+      },
+      {
         "name": "Commands",
         "value": "Please type `!commands` for the list of commands."
       },
       {
         "name": "Rules",
-        "value": "1. Every hour, the bot will send a trivia question relating to any of the anime produced by Studio Trigger. Keep an eye out on the `#Quick-on-the-Trigger` channel! \n\n2. When the question is announced, DM the bot your answer (case-insensitive) using the `!answer` command. An example would be `!answer my answer here`. **You will have 3 attempts for each question, and each attempt will be counted towards the current question**, so answer carefully! This means that you cannot answer a question that was asked previously.\n\n3. When each question is finished, players who answered correctly will earn 1 point. \n\n4. When all rounds are finished, the contestants with the highest score will be entered into a raffle to win a prize. Winners will be announced on the `#Quick-on-the-Trigger` channel and will receive a DM from the bot."
+        "value": "1. Every hour, the bot will send a trivia question relating to any of the anime produced by Studio Trigger. Keep an eye out on the `#quick-on-the-trigger` channel! \n\n2. When the question is announced, DM the bot your answer (case-insensitive) using the `!answer` command. An example would be `!answer my answer here`. **You will have 3 attempts for each question, and each attempt will be counted towards the current question**, so answer carefully! This means that you cannot answer a question that was asked previously.\n\n3. When each question is finished, players who answered correctly will earn 1 point. \n\n4. When all rounds are finished, the contestants with the highest score will be entered into a raffle to win a prize. Winners will be announced on the `#quick-on-the-trigger` channel and will receive a DM from the bot."
       },
       {
         "name": "How do I join?",
-        "value": "You can join anytime with the `!join` command. When you join, you will be assigned the `QoT` role and be pinged whenever the a question is announced. When you feel like you have the answer, type `!answer your answer here` and you'll automatically start playing!"
+        "value": "You can join anytime with the `!join` command. When you join, you will be assigned the `QotT` role and be pinged whenever the a question is announced. When you feel like you have the answer, type `!answer your answer here` and you'll automatically start playing!"
       },
       {
-        "name": "How do I quit?",
-        "value": "If you no longer wish to be pinged and want to stop playing, DM the bot `!leave`. This will remove the `QoT` role, but your details will be saved if you wish to join back. If you wish to join back, you will need to DM `!join` again."
+        "name": "How do I leave?",
+        "value": "If you no longer wish to be pinged and want to stop playing, DM the bot `!leave`. This will remove the `QotT` role, but your details will be saved if you wish to join back. If you wish to join back, you will need to DM `!join` again."
       },
       {
         "name": "Prizes for Winners",
-        "value": "To be announced!"
+        "value": "1 x Right Stuf $10 Gift Certificate."
       }
     ]
 }

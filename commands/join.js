@@ -27,6 +27,7 @@ module.exports = {
     // Take note, node will not warn you of misspellings here, please be careful.
     name: 'join',
     description: 'Command to handle join command',
+    checkRole,
     async execute(message, args) {
        /**
         * Mongoose has it's own functions for query.
@@ -52,7 +53,7 @@ module.exports = {
                         message.author.send(`Welcome back to Quick on the Trigger! You are now able to answer again!`);
                         usr.save();
                     })
-                return;
+           
             }
             else {
                 const user = new Users({
