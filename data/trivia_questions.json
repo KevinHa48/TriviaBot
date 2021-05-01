@@ -10,39 +10,95 @@
         },
 
         {
-            "question": "What is the name of the terrorist group Lio Fotia is a part of?",
+            "question": "How many minutes long is the Kill la Kill recap episode? (Answer in decimal format)",
             "id": 2,
-            "answer": ["Mad Burnish"],
+            "answer": ["1.5"],
             "show": "Promare",
+            "imagePath": "./images/chair.gif",
+            "image": "chair.gif"
+        },
+
+        {
+            "question": "What was the color of the candy that Hiro gave Zero Two? ",
+            "id": 3,
+            "answer": ["Green"],
+            "show": "Kiznaiver",
+            "imagePath": "./images/zerotwo.gif",
+            "image": "zerotwo.gif"
+        },
+
+        {
+            "question": "Episode 17 of Darling in the FranXX aired a day before this holiday, a fitting date given the context of the episode. What is this holiday?",
+            "id": 4,
+            "answer": ["Mother’s Day"],
+            "show": "Space Patrol Luluco",
+            "imagePath": "./images/kokoro.gif",
+            "image": "kokoro.gif"
+        },
+
+        {
+            "question": "In the first episode of SSSS.Gridman, what is the name of the hospital Rikka takes Yuta to?",
+            "id": 5,
+            "answer": ["Inoue Hospital"],
+            "show": "SSSS.Gridman",
+            "imagePath": "./images/akane2.gif",
+            "image": "akane2.gif"
+        },
+        {
+            "question": "What is Yuta’s address in SSSS.Gridman?",
+            "id": 6,
+            "answer": ["5-33-7-402 Tsutsujidai, Nerima Tokyo"],
+            "show": "SSSS.Gridman",
+            "imagePath": "./images/rikka2.gif",
+            "image": "rikka2.gif"
+        },
+        {
+            "question": "What is the full email address Kudou gives to Andou?",
+            "id": 7,
+            "answer": ["mirei_jurai_foreverlove@mildbank.co.jp"],
+            "show": "SSSS.Gridman",
+            "imagePath": "./images/inou.gif",
+            "image": "inou.gif"
+        },
+        {
+            "question": "What is the name of the newspaper Akko and her friends read at Luna Nova Magical Academy?",
+            "id": 8,
+            "answer": ["LLN Times"],
+            "show": "SSSS.Gridman",
+            "imagePath": "./images/akko2.gif",
+            "image": "akko2.gif"
+        },
+        {
+            "question": "What is the last thing Kacchon says as he’s pushed down the stairs by Noriko?",
+            "id": 9,
+            "answer": ["Polka Dots"],
+            "show": "SSSS.Gridman",
+            "imagePath": "./images/kiz.gif",
+            "image": "kiz.gif"
+        },
+        {
+            "question": "What 1976 movie does the co-ed baseball team that Jackie joins heavily resemble?",
+            "id": 10,
+            "answer": ["The Bad News Bears"],
+            "show": "SSSS.Gridman",
+            "imagePath": "./images/bna.gif",
+            "image": "bna.gif"
+        },
+        {
+            "question": "The Promare share a similar name and context to this figure in Greek mythology? Who is this figure?",
+            "id": 11,
+            "answer": ["Prometheus"],
+            "show": "SSSS.Gridman",
             "imagePath": "./images/lio.gif",
             "image": "lio.gif"
         },
-
         {
-            "question": "What Trigger show does Luluco and Nova from Space Patrol Luluco make a cameo in?",
-            "id": 3,
-            "answer": ["Kiznaiver"],
-            "show": "Kiznaiver",
-            "imagePath": "./images/luluco.gif",
-            "image": "luluco.gif"
-        },
-
-        {
-            "question": "What is the name of the ED (ending song) for Space Patrol Lulco?",
-            "id": 4,
-            "answer": ["Pipo Password"],
-            "show": "Space Patrol Luluco",
+            "question": "What is one of the names of the detective team Luluco visits on Badger Planet SVM-Z?",
+            "id": 12,
+            "answer": ["Sex", "Violence", "MachSpeed"],
+            "show": "SSSS.Gridman",
             "imagePath": "./images/luluco2.gif",
             "image": "luluco2.gif"
-        },
-
-        {
-            "question": "What does the SSSS stand for in SSSS.Gridman? (include the 'to' and 'a')",
-            "id": 5,
-            "answer": ["Special Signature to Save a Soul", "e"],
-            "show": "SSSS.Gridman",
-            "imagePath": "./images/rikka.gif",
-            "image": "rikka.gif"
         }
     ]
 }
