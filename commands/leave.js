@@ -23,8 +23,6 @@ async function removeRole(message, user_id) {
 module.exports = {
     name: 'leave',
     description: 'Removes the QoT role from the requested user.',
-    getLeaveStatus,
-    setLeaveStatus,
     async execute(message, args) {
         await removeRole(message, message.author.id);
     }
