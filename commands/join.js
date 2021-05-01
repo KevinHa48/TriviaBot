@@ -35,12 +35,12 @@ module.exports = {
         * It is different from the native Node.js driver of MongoDB!!!!
         */
 
-        await Users.find({discordID: message.author.id}, (err, usr) => {
+        await Users.findOne({discordID: message.author.id}, (err, usr) => {
             if(err) {
                 console.log(err);
                 return;
             }
-            if(usr.length) {
+            if(usr) {
                 console.log("User already in database attempted to join.")
                 checkRole(message.author.id)
                     .then(hasRole => {
@@ -48,8 +48,9 @@ module.exports = {
                             message.author.send('You already joined! If you\'re confused on how to answer, use `!commands`.');
                             return;
                         }
-                        leave.setLeaveStatus(false);
+                        usr.joinStatus = false;
                         message.author.send(`Welcome back to Quick on the Trigger! You are now able to answer again!`);
+                        usr.save();
                     })
                 return;
             }

@@ -14,7 +14,13 @@ async function sendTrivia() {
     if(i == qbank.trivia_bank.length) {
       triviaEnded = true;
       console.log("Trivia has ended.");
-   
+      const date = new Date();
+      if(date.getDay() == 6) {
+        client.channels.cache.get(s_data.question_channel)
+        .send(`<@&${s_data.role_id}> Quick on the Trigger has ended for today. Check back tomorrow at 10 AM EDT!`);
+        clearInterval(controller);
+        return;
+      }
       client.channels.cache.get(s_data.question_channel)
       .send(`<@&${s_data.role_id}> Quick on the Trigger has ended for today. Winners will be DM'd. Thanks for playing!`);
       
@@ -30,7 +36,7 @@ async function sendTrivia() {
                             qbank.trivia_bank[i].id, 
                             qbank.trivia_bank[i].question));
       await resetUsers();
-      current_answer = ((qbank.trivia_bank[i].answer).split(' ').join('')).toLowerCase(); 
+      current_answer = (((qbank.trivia_bank[i].answer).split(' ').join('')).toLowerCase()).replace(/[^A-Za-z0-9]/g, "");
       console.log(current_answer);
       i++;
     }    
@@ -68,7 +74,7 @@ module.exports = {
               console.log("Warning: Used an admin command!!!");
               message.author.send('Warning: Started the trivia controller.')
               sendTrivia();
-              controller = setInterval(sendTrivia, 300000);
+              controller = setInterval(sendTrivia, 60000);
               console.log("Started trivia controller.");
             }
         

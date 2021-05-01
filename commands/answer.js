@@ -18,12 +18,12 @@ module.exports = {
       console.log(args);
       console.log("User attempted to answer question.");
 
-      if (!participant && !leave.getLeaveStatus()) {
+      if (!participant) {
         message.author.send('It looks you haven\'t joined yet. Type `!join` to enter.');
         return;
       }
 
-      else if(leave.getLeaveStatus()) {
+      else if(!participant.joinStatus) {
         message.author.send('You have left the game. Type `!join` to re-enter.');
         return;
       }
