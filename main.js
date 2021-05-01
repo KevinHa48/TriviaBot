@@ -55,6 +55,13 @@ client.on("message", async message => {
     }
 
     try {
+      await client.guilds.cache.get(s_data.guild_id).members.fetch(message.author.id);
+    } catch {
+      message.author.send(`You are not in the CPAC Discord Server. Make sure you're in the server if you want to play!`);
+      return;
+    }
+
+    try {
       client.commands.get(command).execute(message, clean_args);
     } catch (error) {
       console.error(error);

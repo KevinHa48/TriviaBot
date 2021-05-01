@@ -10,13 +10,13 @@ async function removeRole(message, user_id) {
         const usr = await Users.findOne({discordID: message.author.id});
         usr.joinStatus = false;
         message.author.send('You have left the game! You will not be pinged by the bot anymore.\n'
-        + 'Your scores are still saved, so feel free to join back anytime with the `!join` command. Thanks for playing!');
+        + 'Your scores are still saved, so feel free to join back anytime with the `!join` command.\n' + 
+        'If you are still getting pings from the bot, please let the staff know. Thanks for playing!');
         await member.roles.remove(s_data.role_id);
         await usr.save();
         return;
     }
-    message.author.send('You are not currently in the game! Type `!join` to enter\n'
-    + 'If you are still getting pinged for some reason, please let the staff know!'); 
+    message.author.send('You are not currently in the game! Type `!join` to enter'); 
 }
 
 

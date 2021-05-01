@@ -48,7 +48,7 @@ module.exports = {
                             message.author.send('You already joined! If you\'re confused on how to answer, use `!commands`.');
                             return;
                         }
-                        usr.joinStatus = false;
+                        usr.joinStatus = true;
                         message.author.send(`Welcome back to Quick on the Trigger! You are now able to answer again!`);
                         usr.save();
                     })
