@@ -7,6 +7,10 @@
     },
     "fields": [
         {
+            "name": "Join Command",
+            "value": "Use this to join the Quick on the Trigger event. You will also get the 'QotT' role on the CPAC server and be pinged when a new question is released.```!join```"
+        },
+        {
             "name": "Answer Command",
             "value": "If you think you've got the answer to the question use this command! To answer, type `!answer ` followed by your answer. Don't worry about spaces, symbols, or uppercase letters in your answer!```!answer your answer goes here```"
         },
