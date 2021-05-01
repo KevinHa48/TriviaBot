@@ -14,7 +14,7 @@ async function sendTrivia() {
     if(i == qbank.trivia_bank.length) {
       triviaEnded = true;
       console.log("Trivia has ended.");
-
+   
       client.channels.cache.get(s_data.question_channel)
       .send(`<@&${s_data.role_id}> Quick on the Trigger has ended for today. Winners will be DM'd. Thanks for playing!`);
       
