@@ -5,7 +5,7 @@ const { client } = require('../main.js');
 const s_data = require('../data/server_data.json');
 const cmdusg = require("../data/command_usage.json");
 
-let i = 0;
+let i = 12;
 let current_answer;
 let controller;
 let triviaEnded = false;
@@ -15,13 +15,6 @@ async function sendTrivia() {
     if(i == qbank.trivia_bank.length) {
       triviaEnded = true;
       console.log("Trivia has ended.");
-      const date = new Date();
-      if(date.getDay() == 6) {
-        client.channels.cache.get(s_data.question_channel)
-        .send(`<@&${s_data.role_id}> Quick on the Trigger has ended for today. Check back tomorrow at 10 AM EDT!`);
-        clearInterval(controller);
-        return;
-      }
       client.channels.cache.get(s_data.question_channel)
       .send(`<@&${s_data.role_id}> Quick on the Trigger has ended for today. Winners will be DM'd. Thanks for playing!`);
       

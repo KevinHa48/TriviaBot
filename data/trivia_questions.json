@@ -99,6 +99,86 @@
             "show": "SSSS.Gridman",
             "imagePath": "./images/luluco2.gif",
             "image": "luluco2.gif"
+        },
+        {
+            "question": "How many months was the defender of Jack Knife Edge Town sentenced to penal servitude for?",
+            "id": 13,
+            "answer": ["15"],
+            "show": "SSSS.Gridman",
+            "imagePath": "./images/13.gif",
+            "image": "13.gif"
+        },
+        {
+            "question": "Studio Trigger confirmed plans to release an anime about this game on Netflix in 2022. What is the name of this game, mainly made popular by Keanu Reeves?",
+            "id": 14,
+            "answer": ["Cyberpunk 2077"],
+            "show": "SSSS.Gridman",
+            "imagePath": "./images/14.gif",
+            "image": "14.gif"
+        },
+        {
+            "question": "Currently known as the Famitsu Bunko Grand Prize, a winner from the original competition collaborated with Studio Trigger to produce an animation for his light novel. What was the number of girls in the title of his light novel?",
+            "id": 15,
+            "answer": ["420"],
+            "show": "SSSS.Gridman",
+            "imagePath": "./images/15.gif",
+            "image": "15.gif"
+        },
+        {
+            "question": "In this Studio Trigger animation, a closeup of a uvula turns into a blossoming flower. What is the name of either one of two groups involved in this music video whose official MV is approaching 5 million views on YouTube?",
+            "id": 16,
+            "answer": ["Momoiro Clover Z", "KISS"],
+            "show": "SSSS.Gridman",
+            "imagePath": "./images/16.gif",
+            "image": "16.gif"
+        },
+        {
+            "question": "Two characters shoot at each other simultaneously in a Studio Trigger animation with a name referencing the shape found on the tie of Class 3-E’s homeroom teacher. When this happens, the hand of a clock falls on a number. What is that number?",
+            "id": 17,
+            "answer": ["2"],
+            "show": "SSSS.Gridman",
+            "imagePath": "./images/17.gif",
+            "image": "17.gif"
+        },
+        {
+            "question": "Ai Kayano and Shintarō Asanuma collaborated together in a Studio Trigger animation along with a 2-lettered music producer famous for his Hatsune Miku songs. What year was this Studio Trigger animation released?",
+            "id": 18,
+            "answer": ["2016"],
+            "show": "SSSS.Gridman",
+            "imagePath": "./images/18.gif",
+            "image": "18.gif"
+        },
+        {
+            "question": "In the sequel to the sequel to the sequel of a Studio Trigger animation, a silvery-blue haired girl with a blue bow in her hair stands in front of a red and black piano marked SV-1 on the left. Give the name of the group this animation focused on.",
+            "id": 19,
+            "answer": ["Irodorimori"],
+            "show": "SSSS.Gridman",
+            "imagePath": "./images/19.gif",
+            "image": "19.gif"
+        },
+        {
+            "question": "In an animation by Studio Trigger, one character has various objects themed after this animal in her room which she uses in her idol-esque live streams from her computer. During a live stream, she reaches 1000 viewers in under 5 minutes. What is this animal?",
+            "id": 20,
+            "answer": ["Frog"],
+            "show": "SSSS.Gridman",
+            "imagePath": "./images/20.gif",
+            "image": "20.gif"
+        },
+        {
+            "question": "This Studio Trigger animation features a recipe that includes 6 potatoes, 1 zucchini, and 1 small walking mushroom. The resulting meal is the highest in which of the 7 categories shown on the screen?",
+            "id": 21,
+            "answer": ["Vitamins"],
+            "show": "SSSS.Gridman",
+            "imagePath": "./images/21.gif",
+            "image": "21.gif"
+        },
+        {
+            "question": "This character from a Studio Trigger animation also appears in an anime produced by the Japanese animation studio Creators in Pack. This character was voiced both times by a voice actress who was one of the winners of the 11th Seiyuu Awards. What is the name of this character?",
+            "id": 22,
+            "answer": ["Mobami", "Mobami-chan"],
+            "show": "SSSS.Gridman",
+            "imagePath": "./images/22.gif",
+            "image": "22.gif"
         }
     ]
 }
