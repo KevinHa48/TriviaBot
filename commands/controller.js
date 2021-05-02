@@ -16,7 +16,7 @@ async function sendTrivia() {
       triviaEnded = true;
       console.log("Trivia has ended.");
       client.channels.cache.get(s_data.question_channel)
-      .send(`<@&${s_data.role_id}> Quick on the Trigger has ended for today. Winners will be DM'd. Thanks for playing!`);
+      .send(`<@&${s_data.role_id}> Quick on the Trigger has ended. Winners will be DM'd. Thanks for playing!`);
       
       clearInterval(controller);
       return;
@@ -71,7 +71,7 @@ module.exports = {
               console.log("Warning: Used an admin command!!!");
               message.author.send('Warning: Started the trivia controller.')
               sendTrivia();
-              controller = setInterval(sendTrivia, 5000);
+              controller = setInterval(sendTrivia, 3600000);
               console.log("Started trivia controller.");
             }
         
